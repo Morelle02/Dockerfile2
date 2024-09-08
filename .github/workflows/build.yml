@@ -12,7 +12,7 @@ jobs:
     - name: Set up Docker Buildx
       uses: docker/setup-buildx-action@v2
     - name: Login to Scaleway Container Registry
-      run:  echo ${{ secrets.ACCESS}} | docker login rg.fr-par.scw.cloud/atut-group-1 -u ${{secrets.SCALE_ACCESS}} --password-stdin
+      run:  echo ${{ secrets.SCLE_ACCESS}} | docker login rg.fr-par.scw.cloud/atut-group-1 -u ${{secrets.SCLE_ACCESS}} --password-stdin
     - name: Build the Docker image
       run: docker build . -t ${{ secrets.CONTAINER_REGISTRY_ENDPOINT }}/atut-bootcamp:horgel
     - name: Push the Docker Image
